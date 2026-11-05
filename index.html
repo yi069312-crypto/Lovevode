@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لمريم ♥ من أحمد</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#D81B60;--rose-l:#FF85A1;--lav:#F4EEF2;--deep:#2D1537;--glass:rgba(255,255,255,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:'Tajawal',sans-serif;background:#2D1537;color:#fff;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#1A0B2E 0%,#2D1537 40%,#4A154B 70%,#1A0B2E 100%)}
+body.dark #hearts{display:none}
+.amiri{font-family:'Amiri',serif}
+.glass{background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);box-shadow:0 8px 32px rgba(216,27,96,.15)}
+.btn{font-family:inherit;border:0;cursor:pointer;color:#fff;font-weight:700;font-size:1.05rem;padding:.9rem 2.2rem;border-radius:999px;background:linear-gradient(90deg,#900C3F,var(--rose),#B71C1C);box-shadow:0 8px 24px rgba(216,27,96,.4);transition:transform .2s}
+.btn:active{transform:scale(.95)}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--rose-l);outline-offset:3px}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#hearts i{will-change:transform;position:absolute;bottom:-40px;font-style:normal;color:rgba(255,133,161,.5);animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.8}85%{opacity:.8}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+.page{display:none;position:relative;z-index:1;min-height:100vh;padding:max(1.5rem,env(safe-area-inset-top)) 1.1rem max(2rem,env(safe-area-inset-bottom));max-width:760px;margin:0 auto}
+.page.on{display:block;animation:fade 1s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+/* login */
+#login{display:none;align-items:center;justify-content:center;text-align:center}
+#login.on{display:flex}
+.lbox{width:100%;max-width:340px;padding:2.4rem 1.6rem;border-radius:2rem}
+.heart{font-size:3.4rem;display:block;animation:beat 2s infinite ease-in-out;filter:drop-shadow(0 0 14px rgba(216,27,96,.7))}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.lbox h1{font-size:1.9rem;margin:.8rem 0 .3rem}
+.lbox p{color:rgba(244,238,242,.7);font-size:.9rem;margin-bottom:1.4rem}
+input,textarea{width:100%;font-family:inherit;font-size:1.1rem;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:1.2rem;padding:.9rem 1.1rem;margin-bottom:1rem}
+input{text-align:center;letter-spacing:.3rem}
+input::placeholder,textarea::placeholder{color:rgba(244,238,242,.4);letter-spacing:0}
+.shake{animation:sh .45s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+#err{height:1.2rem;color:var(--rose-l);font-size:.85rem;margin-top:.7rem}
+/* page 1 */
+h2.big{font-size:clamp(1.9rem,8vw,2.8rem);text-align:center;margin:1rem 0 1.4rem;line-height:1.4;text-shadow:0 0 24px rgba(216,27,96,.6)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:2rem}
+.box{will-change:transform;border-radius:1.4rem;padding:1.1rem .3rem;text-align:center;animation:pulse 2s infinite ease-in-out}
+.box:nth-child(2n){animation-delay:.4s}.box:nth-child(3n){animation-delay:.8s}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.box b{display:block;font-size:clamp(1.7rem,8vw,2.4rem);color:var(--rose-l)}
+.box span{font-size:1.15rem;font-weight:700;color:var(--lav)}
+#letter{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(70,28,85,.8);border-radius:1.6rem;padding:1.6rem 1.3rem;font-size:1.25rem;line-height:2.2;min-height:200px;white-space:pre-wrap;color:var(--lav)}
+.row{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:1.6rem}
+#skip{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(1.2rem + env(safe-area-inset-bottom));z-index:5;background:rgba(45,21,55,.85);border:1px solid rgba(255,255,255,.3);color:var(--lav);font-family:inherit;font-size:.85rem;padding:.45rem 1.3rem;border-radius:999px;cursor:pointer}
+#p1{padding-bottom:5rem}
+.hide{display:none!important}
+/* page 2 */
+h2.t{font-size:2rem;text-align:center;margin:1rem 0 1.6rem}
+.mem{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(70,28,85,.8);border-radius:1.6rem;overflow:hidden;margin-bottom:1.6rem}
+.mem .ph{height:300px;background:linear-gradient(135deg,#4A154B,#900C3F) center/cover;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.mem img{width:100%;height:300px;object-fit:cover;display:block}
+.mem p{padding:1.1rem 1.2rem;font-size:1.2rem;text-align:center;line-height:1.9}
+video{width:100%;border-radius:1.6rem;background:#000;margin-bottom:1.6rem;max-height:70vh}
+/* page 3 */
+.env{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2rem}
+.e{aspect-ratio:1.3;border:0;cursor:pointer;color:#fff;font-family:inherit;font-weight:700;border-radius:1rem;position:relative;overflow:hidden;background:linear-gradient(160deg,#C2185B,#7B1040);box-shadow:0 8px 20px rgba(0,0,0,.35);font-size:1rem}
+.e:before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,rgba(255,255,255,.18) 50%) ,linear-gradient(to bottom left,transparent 49.5%,rgba(255,255,255,.18) 50%);background-size:100% 55%;background-repeat:no-repeat}
+.e span{position:relative;font-size:1.8rem;display:block}
+.e.read{opacity:.6}
+#modal{position:fixed;inset:0;background:rgba(10,3,20,.8);display:none;align-items:center;justify-content:center;padding:1.2rem;z-index:20}
+#modal.on{display:flex}
+#card{max-width:420px;width:100%;border-radius:1.6rem;padding:2rem 1.5rem;text-align:center;background:rgba(60,20,70,.95);animation:pop .5s cubic-bezier(.175,.885,.32,1.275)}
+@keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}}
+#card h3{color:var(--rose-l);font-size:1.5rem;margin-bottom:.8rem}
+#card p{font-size:1.25rem;line-height:2;margin-bottom:1.4rem}
+#ok{display:none;color:var(--rose-l);font-weight:700;text-align:center;margin-top:1rem;font-size:1.2rem}
+/* stars */
+#stars{position:fixed;inset:0;z-index:50;background:#000;display:none}
+#stars.on{display:block;animation:fade 2s}
+#again{position:absolute;left:50%;bottom:calc(2.5rem + env(safe-area-inset-bottom));transform:translateX(-50%);opacity:0;pointer-events:none;transition:opacity 1.5s;background:rgba(255,255,255,.12);box-shadow:none;border:1px solid rgba(255,255,255,.35)}
+#again.show{opacity:1;pointer-events:auto}
+canvas{width:100%;height:100%;display:block}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+
+<!-- تسجيل الدخول -->
+<section class="page on" id="login">
+ <div class="lbox glass" id="lf">
+  <i class="heart" style="font-style:normal">💗</i>
+  <h1 class="amiri">لمريم فقط</h1>
+  <p>اكتبي كلمة السر اللي بينا</p>
+  <input id="pw" inputmode="numeric" autocomplete="off" placeholder="__-__" aria-label="كلمة السر">
+  <button class="btn" type="button" id="enter">ادخلي</button>
+  <div id="err"></div>
+ </div>
+</section>
+
+<!-- الصفحة 1 -->
+<section class="page" id="p1">
+ <h2 class="big amiri">بقالنا قد إيه مع بعض ♥</h2>
+ <div class="grid" id="counter"></div>
+ <div id="letter" class="glass amiri"></div>
+ <div class="row">
+  <button id="skip">تخطي</button>
+  <button class="btn hide" id="go2">ادخل لذكرياتنا ♥</button>
+ </div>
+</section>
+
+<!-- الصفحة 2 -->
+<section class="page" id="p2">
+ <h2 class="t amiri">ذكرياتنا ♥</h2>
+ <div id="mems"></div>
+ <video controls playsinline preload="metadata" poster="" id="vid">
+  <source src="video.mp4" type="video/mp4">
+ </video>
+ <div class="row"><button class="btn" id="go3">يلا نكمل ♥</button></div>
+</section>
+
+<!-- الصفحة 3 -->
+<section class="page" id="p3">
+ <h2 class="t amiri">أظرف ليكي ♥</h2>
+ <div class="env" id="env"></div>
+ <div class="glass" style="border-radius:1.6rem;padding:1.4rem">
+  <h3 class="amiri" style="margin-bottom:.8rem;font-size:1.4rem">اكتبيلي رسالة ♥</h3>
+  <textarea id="msg" rows="4" placeholder="اكتبي اللي في قلبك..."></textarea>
+  <div style="text-align:center"><button class="btn" id="send">ابعتي</button></div>
+  <div id="ok">وصلتلي رسالتك يا روحي 💖</div>
+ </div>
+</section>
+
+<div id="modal"><div id="card" class="glass"><h3 class="amiri" id="ct"></h3><p class="amiri" id="cp"></p><button class="btn" id="cc">قفلي الظرف</button></div></div>
+<div id="stars"><canvas id="cv"></canvas><button class="btn" id="again">عيدي من الأول ♥</button></div>
+
+<audio id="a1" src="song1.mp3" loop preload="auto"></audio>
+<audio id="a2" src="song2.mp3" loop preload="auto"></audio>
+<audio id="a3" src="song3.mp3" loop preload="auto"></audio>
+
+<script>
+const $=id=>document.getElementById(id);
+const show=id=>{document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0)};
+const play=n=>{['a1','a2','a3'].forEach(k=>{const a=$(k);if(k!==n)a.pause()});$(n).play().catch(()=>{})};
+
+// قلوب طايرة
+for(let i=0;i<8;i++){const h=document.createElement('i');h.textContent=['♥','✦','♡'][i%3];h.style.cssText=`left:${Math.random()*100}vw;font-size:${10+Math.random()*20}px;animation-duration:${8+Math.random()*10}s;animation-delay:${Math.random()*8}s`;$('hearts').appendChild(h)}
+
+// الباسورد: الشرطة بتتحط لوحدها (يدوس 1111 بس)
+const nd=v=>v.replace(/[٠-٩]/g,c=>c.charCodeAt(0)-1632).replace(/[۰-۹]/g,c=>c.charCodeAt(0)-1776).replace(/\D/g,'');
+$('pw').addEventListener('input',e=>{const d=nd(e.target.value).slice(0,4);e.target.value=d.length>2?d.slice(0,2)+'-'+d.slice(2):d});
+const login=()=>{
+ const v=nd($('pw').value);
+ if(v==='1111'){show('p1');play('a1');startLetter()}
+ else{$('err').textContent='كلمة السر مش صح، جربي تاني ♥';$('lf').classList.remove('shake');void $('lf').offsetWidth;$('lf').classList.add('shake')}
+};
+$('enter').addEventListener('click',login);
+$('pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+
+// العداد
+const start=new Date(2024,5,12,0,0,0);
+const labels=['شهور','أسابيع','أيام','ساعات','دقائق','ثواني'];
+labels.forEach((l,i)=>{const d=document.createElement('div');d.className='box glass';d.innerHTML=`<b id="c${i}">0</b><span>${l}</span>`;$('counter').appendChild(d)});
+function tick(){const n=new Date();
+ let m=(n.getFullYear()-start.getFullYear())*12+n.getMonth()-start.getMonth();
+ let a=new Date(start);a.setMonth(a.getMonth()+m);if(a>n){m--;a=new Date(start);a.setMonth(a.getMonth()+m)}
+ const ms=n-a,days=Math.floor(ms/864e5);
+ [m,Math.floor(days/7),days%7,Math.floor(ms/36e5)%24,Math.floor(ms/6e4)%60,Math.floor(ms/1e3)%60].forEach((v,i)=>$('c'+i).textContent=v)}
+tick();setInterval(tick,1000);
+
+// الرسالة
+const letter=[
+"مريم... يا أجمل حاجة حصلت في حياتي. مش عارف أبدأ منين، لأن كل كلمة بحاول أكتبها بحس إنها صغيرة قوي قدامك. بس أنا قررت أبدأ من النهاية: أنا بحبك، وهفضل أحبك كل يوم أكتر من اللي قبله.",
+"من يوم ١٢ يونيو ٢٠٢٤ والدنيا اتغيرت. كنت فاكر إني عارف يعني إيه سعادة، وبعدين جيتي إنتي وفهمت إني ماكنتش أعرف حاجة. إنتي مش بس حد بحبه، إنتي الحاجة اللي بتخليني أصحى وأنا مبسوط، وأنام وأنا مطمّن إن في حد في الدنيا دي ليا.",
+"بحب ضحكتك لما بتيجي من قلبك، وبحب عينيكي لما بتلمع وإنتي بتحكيلي عن حاجة فرحانة بيها. بحب إنك بتهتمي بالتفاصيل الصغيرة اللي محدش بياخد باله منها. بحب طيبتك، وحنيتك، وحتى عِنادك اللي بيخليني أضحك لما أفتكره. إنتي مش مثالية، وأنا مش عايزك كده. أنا عايزك إنتي، بكل اللي فيكي.",
+"فاكر أيامنا الأولى؟ كنا بنتكلم بالساعات ونحس إن الوقت بيجري. كل مكالمة كانت بتخليني أحبك أكتر، وكل رسالة منك كانت بتفرّح يومي. ولسه لحد النهاردة، أول ما اسمك ينوّر على موبايلي، قلبي بيدق بنفس الطريقة بالظبط، كأننا لسه في الأول.",
+"عارف إن في أيام صعبة عدّت علينا، وفي مرات زعلنا فيها من بعض. بس عمري ما فكرت إني أسيبك. كل مرة كنت بتأكد إن اللي بينا أكبر من أي خلاف، وإن الحب الحقيقي مش إنك ماتزعليش، الحب إنك ترجعي وتفضلي ماسكة إيدي. وأنا هفضل ماسك إيدك مهما حصل.",
+"بوعدك إني أكون سندك لما الدنيا تتعبك، وأكون فرحتك لما تحتاجي حد يضحكك. بوعدك أسمعك لما تحكي، وأفهمك حتى لو ماقلتيش. بوعدك أحافظ على قلبك زي ما بحافظ على أغلى حاجة عندي، لأنه فعلاً أغلى حاجة عندي. وبوعدك إني مش هخليكي تحسي إنك لوحدك أبداً.",
+"نفسي أعمل معاكي كل حاجة حلوة. نسافر، ونضحك، ونعمل ذكريات نحكيها لما نكبر. نفسي أشوفك في كل مرحلة من حياتك وأكون جنبك: في نجاحك، وفي أحلامك، وفي كل خطوة بتخطيها. ونفسي في يوم نبص لورا ونقول: ياه، إحنا وصلنا لحلمنا مع بعض.",
+"وعلى فكرة، العدّاد اللي فوق ده مش مجرد أرقام. كل ثانية فيه هي ثانية كنتي فيها في حياتي، وأنا ممتن لكل واحدة فيهم. ومش عايزه يقف أبداً، عايزه يفضل شغال العمر كله، ونعدّ سوا السنين مش الأيام.",
+"شكراً إنك إنتي. شكراً إنك اخترتيني. شكراً على كل لحظة، وكل ضحكة، وكل دعوة حلوة دعيتيها لي. إنتي نعمة من ربنا، وأنا بحمده عليكي كل يوم.",
+"بحبك يا مريم... بحبك أكتر من أي كلام ممكن يتكتب. وخدي بالك: دي لسه البداية.\n\nبتاعك دايماً، أحمد ♥"
+].join('\n\n');
+let timer,typeT,done=false;
+function finish(){if(done)return;done=true;clearInterval(timer);clearTimeout(typeT);$('letter').textContent=letter;$('skip').classList.add('hide');$('go2').classList.remove('hide')}
+function startLetter(){done=false;clearInterval(timer);clearTimeout(typeT);const L=$('letter');L.textContent='';const node=document.createTextNode('');L.appendChild(node);let ti=0;
+ typeT=setTimeout(()=>{timer=setInterval(()=>{ti+=3;node.data=letter.slice(0,ti);
+  if(ti>=letter.length)finish()},50)},3000)}
+$('skip').onclick=finish;
+$('go2').onclick=()=>{show('p2');play('a2')};
+
+// الذكريات (الصور من الإنترنت، ولو صورة ماظهرتش بتظهر خلفية بقلب)
+const U=id=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=70`;
+const mems=[
+["photo-1518199266791-5375a83190b7","أول ما شفتك عرفت إن قلبي لقى بيته ♥"],
+["photo-1529634806980-85c3dd6d34ac","ضحكتك هي أحلى حاجة بتحصل في يومي"],
+["photo-1516589178581-6cd7833ae3b2","إيدك في إيدي هي أأمن مكان في الدنيا"],
+["photo-1474552226712-ac0f0961a954","معاكي حتى الأيام العادية بتبقى حكاية"],
+["photo-1494774157365-9e04c6720e47","كل مكان بنروحه سوا بيبقى أحلى بوجودك"],
+["photo-1522673607200-164d1b6ce486","إنتي الصديقة والحبيبة وكل حاجة حلوة"],
+["photo-1511988617509-a57c8a288659","ومعاكي أنا مش عايز من الدنيا حاجة تانية"]];
+mems.forEach(m=>{const d=document.createElement('div');d.className='mem glass';
+ const img=new Image();img.alt=m[1];img.loading='lazy';img.src=U(m[0]);
+ const ph=document.createElement('div');ph.className='ph';ph.textContent='💗';
+ img.onerror=()=>img.replaceWith(ph);d.appendChild(img);
+ const p=document.createElement('p');p.className='amiri';p.textContent=m[1];d.appendChild(p);$('mems').appendChild(d)});
+$('go3').onclick=()=>{$('vid').pause();show('p3');play('a3')};
+
+// الأظرف
+const notes=[
+["رسالة حلوة","إنتي أحلى صدفة حصلت في حياتي، وأحلى قرار كان من ربنا ليا."],
+["وعد","أوعدك إني عمري ما أسيب إيدك، مهما الدنيا تعبتنا."],
+["اتفاق","نتفق إن أي زعل بينا مايباتش للصبح، ونصالح بعض قبل النوم."],
+["شكر","شكراً إنك بتتحمليني وبتحبيني على كل حالاتي."],
+["وعد","أوعدك أفضل أحاول كل يوم أكون الشخص اللي يستاهلك."],
+["رسالة حلوة","لو اتولدت تاني ألف مرة، هدور عليكي في كل مرة."],
+["اتفاق","نتفق إننا نسافر سوا كل سنة مكان جديد، ونعمل ذكريات جديدة."],
+["شكر","شكراً على الأيام الحلوة، وعلى الأيام الصعبة اللي علمتنا إحنا مين."],
+["رسالة حلوة","ابتسامتك ممكن تصلّح يومي كله حتى لو كان أسوأ يوم."],
+["وعد","أوعدك إن آخر كلمة هقولها كل يوم تبقى: بحبك."]];
+notes.forEach((n,i)=>{const b=document.createElement('button');b.className='e';b.innerHTML=`<span>💌</span>${n[0]}`;
+ b.onclick=()=>{$('ct').textContent=n[0];$('cp').textContent=n[1];$('modal').classList.add('on');b.classList.add('read')};$('env').appendChild(b)});
+$('cc').onclick=()=>$('modal').classList.remove('on');
+
+// الرسالة (محلية بس)
+$('send').onclick=()=>{const v=$('msg').value.trim();if(!v){$('msg').focus();return}
+ try{const l=JSON.parse(localStorage.getItem('maryam_msgs')||'[]');l.push({t:v,d:Date.now()});localStorage.setItem('maryam_msgs',JSON.stringify(l))}catch(e){}
+ $('ok').style.display='block';$('send').disabled=true;$('msg').value='';
+ setTimeout(stars,2500)};
+
+// النجوم
+let raf,showT;
+function stars(){
+ $('stars').classList.add('on');document.body.classList.add('dark');clearTimeout(showT);showT=setTimeout(()=>$('again').classList.add('show'),7500);
+ const c=$('cv'),x=c.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2);
+ c.width=innerWidth*dpr;c.height=innerHeight*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+ const W=innerWidth,H=innerHeight,o=document.createElement('canvas');o.width=W;o.height=H;const q=o.getContext('2d');
+ const fs=Math.min(W*0.34,H*0.3);q.font=`700 ${fs}px Amiri, serif`;q.textAlign='center';q.textBaseline='middle';q.direction='rtl';q.fillStyle='#fff';q.fillText('بحبك',W/2,H/2);
+ const d=q.getImageData(0,0,W,H).data,pts=[],g=Math.max(4,Math.round(W/110));
+ for(let y=0;y<H;y+=g)for(let xx=0;xx<W;xx+=g)if(d[(y*W+xx)*4+3]>128)pts.push([xx,y]);
+ const P=pts.map(p=>({tx:p[0],ty:p[1],x:Math.random()*W,y:Math.random()*H,s:Math.random()*1.4+.7,d:Math.random()*2500,ph:Math.random()*6,ox:0,oy:0,vx:0,vy:0}));
+ const B=[];for(let i=0;i<200;i++)B.push({x:Math.random()*W,y:Math.random()*H,s:Math.random()*1.2+.3,ph:Math.random()*6});
+ const ptr=new Map();let sp=[],sh=[],sNext=4000;
+ const burst=(X,Y,n)=>{for(let i=0;i<n;i++){const a=Math.random()*6.28,v=1+Math.random()*4;sp.push({x:X,y:Y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-1,l:1,h:Math.random()<.45})}};
+ c.style.touchAction='none';
+ c.onpointerdown=e=>{ptr.set(e.pointerId,[e.clientX,e.clientY]);burst(e.clientX,e.clientY,28)};
+ c.onpointermove=e=>{ptr.set(e.pointerId,[e.clientX,e.clientY]);if(e.buttons&&Math.random()<.5)burst(e.clientX,e.clientY,2)};
+ c.onpointerup=c.onpointercancel=c.onpointerleave=e=>ptr.delete(e.pointerId);
+ const t0=performance.now(),ease=t=>t<0?0:t>1?1:1-Math.pow(1-t,3);
+ (function f(now){const t=now-t0;x.clearRect(0,0,W,H);x.fillStyle='#fff';
+  B.forEach(b=>{x.globalAlpha=.3+.4*Math.sin(t/600+b.ph);x.beginPath();x.arc(b.x,b.y,b.s,0,7);x.fill()});
+  if(t>sNext){sNext=t+3000+Math.random()*3000;sh.push({x:W*(.3+Math.random()*.7),y:Math.random()*H*.35,l:1})}
+  sh=sh.filter(s=>s.l>0);x.lineWidth=1.5;
+  sh.forEach(s=>{s.x-=9;s.y+=5;s.l-=.012;x.globalAlpha=Math.max(s.l,0);x.strokeStyle='#fff';x.beginPath();x.moveTo(s.x,s.y);x.lineTo(s.x+70,s.y-39);x.stroke()});
+  P.forEach(p=>{const e=ease((t-p.d-500)/3500);const bx=p.x+(p.tx-p.x)*e,by=p.y+(p.ty-p.y)*e;
+   let fx=-p.ox*.06,fy=-p.oy*.06;
+   ptr.forEach(pp=>{const dx=bx+p.ox-pp[0],dy=by+p.oy-pp[1],d2=dx*dx+dy*dy;if(d2<12100&&d2>1){const dd=Math.sqrt(d2),k=(1-dd/110)*4;fx+=dx/dd*k;fy+=dy/dd*k}});
+   p.vx=(p.vx+fx)*.88;p.vy=(p.vy+fy)*.88;p.ox+=p.vx;p.oy+=p.vy;
+   x.globalAlpha=.5+.5*Math.sin(t/400+p.ph)*(e<1?1:.6);x.beginPath();x.arc(bx+p.ox,by+p.oy,p.s,0,7);x.fill()});
+  sp=sp.filter(s=>s.l>0);x.font='14px sans-serif';x.textAlign='center';
+  sp.forEach(s=>{s.x+=s.vx;s.y+=s.vy;s.vy+=.06;s.l-=.018;x.globalAlpha=Math.max(s.l,0);
+   if(s.h){x.fillStyle='#FF85A1';x.fillText('♥',s.x,s.y)}else{x.fillStyle='#fff';x.beginPath();x.arc(s.x,s.y,1.6,0,7);x.fill()}});
+  x.fillStyle='#fff';
+  raf=requestAnimationFrame(f)})(t0)}
+function restart(){cancelAnimationFrame(raf);clearTimeout(showT);$('stars').classList.remove('on');$('again').classList.remove('show');document.body.classList.remove('dark');
+ ['a1','a2','a3'].forEach(k=>{const a=$(k);a.pause();try{a.currentTime=0}catch(e){}});$('vid').pause();
+ $('ok').style.display='none';$('send').disabled=false;document.querySelectorAll('.e').forEach(b=>b.classList.remove('read'));
+ $('go2').classList.add('hide');$('skip').classList.remove('hide');show('p1');play('a1');startLetter()}
+$('again').onclick=restart;
+</script>
+</body>
+</html>
